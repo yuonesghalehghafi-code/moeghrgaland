@@ -1,0 +1,669 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شرکت تولید مرغ گوشتی گلستان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .order-success {
+            display: none;
+        }
+
+        .order-success.show {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                        <img src="../../Pictures/Saved Pictures/Screenshot 2025-08-31 114911(1)(1).png" width="207" height="222" alt="">
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">کشتارگاه مرغ گلند </h1>
+                        <p class="text-sm text-gray-600">تولید مرغ گوشتی درجه یک</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 font-medium transition-colors">خانه</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 font-medium transition-colors">ارتباطات</a>
+                    <a href="#products" class="text-gray-700 hover:text-green-600 font-medium transition-colors">محصولات</a>
+                    <a href="#order" class="text-gray-700 hover:text-green-600 font-medium transition-colors">سفارش</a>
+                    <a href="#gallery" class="text-gray-700 hover:text-green-600 font-medium transition-colors">گالری</a>
+                </nav>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-green-600">خانه</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-green-600">ارتباطات</a>
+                <a href="#products" class="block py-2 text-gray-700 hover:text-green-600">محصولات</a>
+                <a href="#order" class="block py-2 text-gray-700 hover:text-green-600">نظر ها</a>
+                <a href="#gallery" class="block py-2 text-gray-700 hover:text-green-600">گالری</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-6">مرغ گوشتی تازه و باکیفیت</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">از مرغداری‌های مدرن گلستان، مستقیم به سفره شما</p>
+            <div class="flex justify-center space-x-4 space-x-reverse">
+                <a href="#order" class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">سفارش دهید</a>
+                <a href="#products" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">مشاهده محصولات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">ارتباطات عمومی</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">برای هرگونه سوال، پیشنهاد یا همکاری با ما در تماس باشید</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center card-hover bg-gray-50 p-6 rounded-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">تلفن تماس</h4>
+                    <p class="text-gray-600">017-35886114</p>
+                    <p class="text-gray-600">0935 571 3292</p>
+                </div>
+
+                <div class="text-center card-hover bg-gray-50 p-6 rounded-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">آدرس</h4>
+                    <p class="text-gray-600">گلستان بعد از پارک جنگلی دلند</p>
+                    <p class="text-gray-600">شهرک صنعتی</p>
+                </div>
+
+                <div class="text-center card-hover bg-gray-50 p-6 rounded-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">ایمیل</h4>
+                    <p class="text-gray-600">morghe_Galand@yahoo.com</p>
+
+                </div>
+
+                <div class="text-center card-hover bg-gray-50 p-6 rounded-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">ساعات کاری</h4>
+                    <p class="text-gray-600">شنبه تا پنج‌شنبه</p>
+                    <p class="text-gray-600">8:00 - 24:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">محصولات ما</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">انواع مرغ گوشتی تازه و باکیفیت با بهترین استانداردهای بهداشتی</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+                        <img src="../../Pictures/Saved Pictures/Screenshot 2025-09-21 064037.png" width="1136" height="799" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">مرغ کامل</h4>
+                        <p class="text-gray-600 mb-4">مرغ کامل تازه و پاک شده، آماده برای طبخ</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-600">۱۲۰,۰۰۰ تومان</span>
+                            <span class="text-sm text-gray-500">هر کیلو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                     <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-17.jpg" width="1280" height="960" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">ران مرغ</h4>
+
+                        <p class="text-black-600 mb-4">ران مرغ تازه و گوشتی، مناسب برای کباب و خورش</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-600">۱۴۰,۰۰۰ تومان</span>
+                            <span class="text-sm text-gray-500">هر کیلو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center">
+                        <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-09.jpg" width="1280" height="960" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">سینه مرغ</h4>
+                        <p class="text-gray-600 mb-4">سینه مرغ بدون استخوان، مناسب برای رژیم غذایی</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-600">۱۸۰,۰۰۰ تومان</span>
+                            <span class="text-sm text-gray-500">هر کیلو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-22.jpg" width="1280" height="960" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">بال مرغ</h4>
+                        <p class="text-gray-600 mb-4">بال مرغ تازه، مناسب برای سوخاری و کباب</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-600">۱۱۰,۰۰۰ تومان</span>
+                            <span class="text-sm text-gray-500">هر کیلو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-26.jpg" width="1280" height="960" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">گردن و پا</h4>
+                        <p class="text-gray-600 mb-4">گردن و پای مرغ، مناسب برای آش و آبگوشت</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-600">۸۰,۰۰۰ تومان</span>
+                            <span class="text-sm text-gray-500">هر کیلو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center">
+                     <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-31.jpg" width="1280" height="960" alt="">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2">جگر مرغ</h4>
+                        <p class="text-gray-600 mb-4">جگر مرغشده، آماده برای طبخ سریع</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-600">۱۳۰,۰۰۰ تومان</span>
+                            <span class="text-sm text-gray-500">هر کیلو</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">ثبت سفارش</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">سفارش خود را ثبت کنید و در کمترین زمان تحویل بگیرید</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <div id="order-form" class="bg-gray-50 p-8 rounded-lg">
+                    <form id="orderForm">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">نام و نام خانوادگی</label>
+                                <input type="text" id="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">شماره تماس</label>
+                                <input type="tel" id="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">آدرس تحویل</label>
+                            <textarea id="address" required rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">محصول مورد نظر</label>
+                            <select id="product" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                                <option value="">انتخاب کنید</option>
+                                <option value="whole-chicken">مرغ کامل - ۱۲۰,۰۰۰ تومان</option>
+                                <option value="chicken-thigh">ران مرغ - ۱۴۰,۰۰۰ تومان</option>
+                                <option value="chicken-breast">سینه مرغ - ۱۸۰,۰۰۰ تومان</option>
+                                <option value="chicken-wing">بال مرغ - ۱۱۰,۰۰۰ تومان</option>
+                                <option value="chicken-neck-feet">گردن و پا - ۸۰,۰۰۰ تومان</option>
+                                <option value="chicken-pieces">مرغ قطعه‌بندی - ۱۳۰,۰۰۰ تومان</option>
+                            </select>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">مقدار (کیلوگرم)</label>
+                                <input type="number" id="quantity" min="1" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">تاریخ تحویل</label>
+                                <input type="date" id="deliveryDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">توضیحات اضافی</label>
+                            <textarea id="notes" rows="3" placeholder="توضیحات خاص یا درخواست‌های ویژه..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                            ثبت سفارش
+                        </button>
+                    </form>
+                </div>
+
+                <div id="order-success" class="order-success bg-green-50 border border-green-200 p-8 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-green-800 mb-2">سفارش شما با موفقیت ثبت شد!</h4>
+                    <p class="text-green-700 mb-4">کارشناسان ما در اسرع وقت با شما تماس خواهند گرفت.</p>
+                    <p class="text-sm text-green-600">شماره پیگیری: <span id="orderNumber" class="font-semibold"></span></p>
+                    <button onclick="resetForm()" class="mt-4 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        ثبت سفارش جدید
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">گالری محصولات</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">نمونه‌ای از محصولات باکیفیت و تازه ما</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg" onclick="openModal('modal1')">
+                <img src="../../Pictures/Saved Pictures/Screenshot 2025-09-21 064037.png" width="1136" height="799" alt="">
+                  Ss
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-semibold text-gray-800">مرغ کامل تازه</h5>
+                        <p class="text-sm text-gray-600">آماده برای طبخ</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg" onclick="openModal('modal2')">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+<img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-09.jpg" width="1280" height="960" alt="">
+  </div>
+                    <div class="p-4">
+                        <h5 class="font-semibold text-gray-800">ران مرغ</h5>
+                        <p class="text-sm text-gray-600">گوشتی و تازه</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg" onclick="openModal('modal3')">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+<img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-09.jpg" width="960" height="1280" alt="">                    </div>
+                    <div class="p-4">
+                        <h5 class="font-semibold text-gray-800">سینه مرغ</h5>
+                        <p class="text-sm text-gray-600">بدون استخوان</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg" onclick="openModal('modal4')">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-22.jpg" width="960" height="1280" alt="">
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-semibold text-gray-800">بال مرغ</h5>
+                        <p class="text-sm text-gray-600">مناسب سوخاری</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg" onclick="openModal('modal5')">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                        <span class="text-4xl">🏭</span>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-semibold text-gray-800">مرغداری مدرن</h5>
+                        <p class="text-sm text-gray-600">تجهیزات پیشرفته</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg" onclick="openModal('modal7')">
+                    <div class="h-48 bg-gradient-to-br from-teal-400 to-green-500 flex items-center justify-center">
+                        <span class="text-4xl">✅</span>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-semibold text-gray-800">کنترل کیفیت</h5>
+                        <p class="text-sm text-gray-600">استاندارد بالا</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item bg-white rounded-lg overflow-hidden shadow-lg" onclick="openModal('modal8')">
+                    <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-14.jpg" width="960" height="1280" alt="">
+                    <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-22.jpg" width="1280" height="960" alt="">
+                        <span class="text-4xl">🥘</span>
+                    </div>
+                    <div class="p-4">
+                        <h5 class="font-semibold text-gray-800">قطعه‌بندی</h5>
+                        <p class="text-sm text-gray-600">آماده طبخ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-4 space-x-reverse mb-4">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                            <img src="../../Pictures/Saved Pictures/Screenshot 2025-08-31 114911(1)(1).png" width="207" height="222" alt="">
+                        </div>
+                        <h4 class="text-xl font-bold">کشتارگاه مرغ گلند</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">تولیدکننده مرغ گوشتی تازه و باکیفیت در استان گلستان</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">📱</a>
+                     
+                        <a href="#" class="text-gray-300 hover:text-white transition-colors">🌐</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">لینک‌های مفید</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-white transition-colors">خانه</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-white transition-colors">محصولات</a></li>
+                        <li><a href="#order" class="text-gray-300 hover:text-white transition-colors">سفارش</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">تماس با ما</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">اطلاعات تماس</h5>
+                    <div class="space-y-2 text-gray-300">
+                        <p>📍 گلستان بعد از پارک جنگلی دلند</p>
+                        <p>📞 017-35886114</p>
+                        <p>📞 0935 571 3292</p>
+                        <p>پیج اینستاگرام galand.co </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">© ۱۴۰۳ مرغداری گلستان. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-red-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span class="text-6xl"><img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-17.jpg" width="960" height="1280" alt=""></span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">مرغ کامل تازه</h4>
+                <p class="text-gray-600 mb-4">مرغ کامل پاک شده و آماده برای طبخ انواع غذاها</p>
+                <button onclick="closeModal('modal1')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span class="text-6xl"><img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-17.jpg" width="960" height="1280" alt=""></span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">ران مرغ</h4>
+                <p class="text-gray-600 mb-4">ران مرغ گوشتی و تازه، مناسب برای کباب و خورش</p>
+                <button onclick="closeModal('modal2')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-09.jpg" width="960" height="1280" alt="">
+                </div>
+                <h4 class="text-xl font-semibold mb-2">سینه مرغ</h4>
+                <p class="text-gray-600 mb-4">سینه مرغ بدون استخوان، مناسب برای رژیم غذایی</p>
+                <button onclick="closeModal('modal3')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span class="text-6xl"><img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-22.jpg" width="960" height="1280" alt=""></span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">بال مرغ</h4>
+                <p class="text-gray-600 mb-4">بال مرغ تازه، مناسب برای سوخاری و کباب</p>
+                <button onclick="closeModal('modal4')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span class="text-6xl">🏭</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">مرغداری مدرن</h4>
+                <p class="text-gray-600 mb-4">تجهیزات پیشرفته و استاندارد برای تولید</p>
+                <button onclick="closeModal('modal5')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span class="text-6xl">🚚</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">حمل و نقل</h4>
+                <p class="text-gray-600 mb-4">تحویل سریع و ایمن محصولات تازه</p>
+                <button onclick="closeModal('modal6')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal7" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-teal-400 to-green-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span class="text-6xl">✅</span>
+                </div>
+                <h4 class="text-xl font-semibold mb-2">کنترل کیفیت</h4>
+                <p class="text-gray-600 mb-4">نظارت دقیق بر کیفیت و بهداشت محصولات</p>
+                <button onclick="closeModal('modal7')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal8" class="modal">
+        <div class="bg-white p-8 rounded-lg max-w-md mx-4">
+            <div class="text-center">
+                <div class="w-32 h-32 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-14.jpg" width="960" height="1280" alt="">
+                 <img src="../../Pictures/Saved Pictures/photo_2025-09-22_12-08-19.jpg" width="960" height="1280" alt="">
+                </div>
+                <h4 class="text-xl font-semibold mb-2">قطعه‌بندی</h4>
+                <p class="text-gray-600 mb-4">مرغ قطعه‌بندی شده، آماده برای طبخ سریع</p>
+                <button onclick="closeModal('modal8')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                    بستن
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Order form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Generate random order number
+            const orderNumber = 'GO' + Math.floor(Math.random() * 100000).toString().padStart(5, '0');
+            document.getElementById('orderNumber').textContent = orderNumber;
+
+            // Hide form and show success message
+            document.getElementById('order-form').style.display = 'none';
+            document.getElementById('order-success').classList.add('show');
+
+            // Scroll to success message
+            document.getElementById('order-success').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
+
+        // Reset form function
+        function resetForm() {
+            document.getElementById('orderForm').reset();
+            document.getElementById('order-form').style.display = 'block';
+            document.getElementById('order-success').classList.remove('show');
+        }
+
+        // Gallery modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                }
+            });
+        });
+
+        // Set minimum date for delivery to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('deliveryDate').min = tomorrow.toISOString().split('T')[0];
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'982300f910b53a9a',t:'MTc1ODM4ODkzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+
